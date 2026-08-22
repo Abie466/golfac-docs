@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your colours — Academy Membership</title>
+<meta name="description" content="How the Golf Gateway and Golf Gateway Plus schemes work, and how you move from one colour to the next.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#0B2119;
+    --raised:#123328;
+    --edge:#1D4A3A;
+    --ink:#F1F7F3;
+    --muted:#93B3A4;
+    --maroon:#7B0F0F;
+    --amber:#E89020;
+    --aqua:#4FC3E0;
+    --navy:#1E3A6F;
+    --violet:#b470e1;
+    --scarlet:#e40733;
+    --charcoal:#36454F;
+    --emerald:#2E7D5B;
+    --platinum:#C0C0C0;
+    --display:"Fraunces",Georgia,serif;
+    --body:"Inter",system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:44rem;margin:0 auto;padding:0 1.25rem}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.15;margin:0}
+  a{color:var(--aqua)}
+
+  /* ---- hero ---- */
+  .hero{padding:3.25rem 0 2.75rem}
+  .eyebrow{
+    font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);font-weight:600;margin:0 0 1rem
+  }
+  .hero h1{font-size:clamp(2.4rem,10vw,3.6rem);letter-spacing:-.02em}
+    .hero p{color:var(--muted);font-size:1.05rem;margin:1.1rem 0 0;max-width:32rem}
+  .hero .steps{margin-top:2rem}
+
+  /* ---- sections ---- */
+  section{padding:3rem 0;border-top:1px solid var(--edge)}
+  section h2{font-size:clamp(1.6rem,6vw,2.1rem);letter-spacing:-.01em}
+  section > p{color:var(--muted);margin:.9rem 0 0}
+  section > p.lead{color:var(--ink)}
+
+  /* ---- steps ---- */
+  .steps{list-style:none;padding:0;margin:2rem 0 0;counter-reset:s}
+  .steps li{
+    counter-increment:s;position:relative;
+    padding:0 0 1.6rem 3.1rem;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:-.1rem;
+    width:2.1rem;height:2.1rem;border-radius:50%;
+    display:grid;place-items:center;
+    background:var(--raised);border:1px solid var(--edge);
+    font-family:var(--display);font-size:.95rem;color:var(--amber)
+  }
+  .steps b{display:block;font-weight:600;margin-bottom:.15rem}
+  .steps span{color:var(--muted);font-size:.95rem}
+
+  /* ---- stage cards ---- */
+  .stage{
+    background:var(--raised);border:1px solid var(--edge);
+    border-radius:14px;padding:1.25rem;margin:1.25rem 0 0
+  }
+  .stage h3{font-size:1.15rem;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+  .stage h3 small{
+    font-family:var(--body);font-weight:500;font-size:.78rem;
+    color:var(--muted);letter-spacing:.04em;text-transform:uppercase
+  }
+  .tiers{display:flex;flex-direction:column;gap:.5rem;margin:1rem 0 0}
+  .tier{display:flex;align-items:center;gap:.7rem;font-size:.93rem}
+  .tier .sw{width:1.5rem;height:1.5rem;border-radius:6px;background:var(--c);flex:none}
+  .tier .txt strong{font-weight:600}
+  .tier .txt span{display:block;color:var(--muted);font-size:.82rem;line-height:1.4}
+
+  /* ---- graduation band ---- */
+  .grad-band{
+    margin:2rem 0 0;padding:1.15rem 1.25rem;border-radius:14px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--platinum) 14%,var(--raised)),var(--raised));
+    border:1px solid var(--edge)
+  }
+  .grad-band p{margin:0;font-size:.95rem}
+  .grad-band p + p{margin-top:.6rem;color:var(--muted);font-size:.88rem}
+
+  /* ---- detail table ---- */
+  details{margin:2rem 0 0;border:1px solid var(--edge);border-radius:14px;overflow:hidden}
+  summary{
+    padding:1rem 1.25rem;cursor:pointer;font-weight:600;font-size:.95rem;
+    background:var(--raised);list-style:none
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:" +";color:var(--amber)}
+  details[open] summary::after{content:" −"}
+  .tblwrap{overflow-x:auto;padding:.25rem 1.25rem 1.25rem}
+  table{border-collapse:collapse;width:100%;font-size:.86rem;margin-top:.75rem}
+  caption{text-align:left;color:var(--muted);font-size:.8rem;padding:.75rem 0 .35rem;font-weight:600}
+  th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--edge);white-space:nowrap}
+  th{color:var(--muted);font-weight:600;font-size:.76rem;text-transform:uppercase;letter-spacing:.06em}
+  td.num{font-variant-numeric:tabular-nums}
+  .chip{display:inline-flex;align-items:center;gap:.45rem}
+  .chip i{width:.75rem;height:.75rem;border-radius:3px;background:var(--c);display:block}
+
+  .contact-lines{margin:.85rem 0 0;font-size:1rem;line-height:2}
+  .contact-lines a{
+    color:var(--aqua);text-decoration:none;font-weight:600;
+    border-bottom:1px solid color-mix(in srgb,var(--aqua) 40%,transparent);
+    padding-bottom:1px
+  }
+  .contact-lines a:hover{border-bottom-color:var(--aqua)}
+
+  footer{padding:2.5rem 0 3.5rem;border-top:1px solid var(--edge);color:var(--muted);font-size:.85rem}
+  footer p{margin:0 0 .5rem}
+
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <p class="eyebrow">Academy Membership</p>
+    <h1>How it works</h1>
+    <p>You earn colours by playing rounds. Three things, and that's really all of it.</p>
+    <ol class="steps">
+      <li><b>Play your round</b><span>Your coach or a parent logs your score, hole by hole. You might log it yourself if your club allows it.</span></li>
+      <li><b>Beat the target</b><span>Each colour has a score to beat. Come in at or under it and the colour is yours — it goes in your trophy cabinet and stays there.</span></li>
+      <li><b>One colour at a time</b><span>You earn colours in order. A brilliant round doesn't skip you ahead — it earns you the next one waiting.</span></li>
+    </ol>
+  </header>
+
+  <section>
+    <h2>Golf Gateway</h2>
+    <p class="lead">Where everyone starts. Three stages, three colours each, and the course gets longer as you climb.</p>
+    <p>Targets are measured in <strong>strokes over par</strong> — par being the score a very good golfer would take. If par for three holes is 12 and you go round in 15, you're three over.</p>
+
+    <div class="stage">
+      <h3>First 3 holes <small>Stage 1</small></h3>
+      <div class="tiers">
+        <div class="tier" style="--c:var(--maroon)"><span class="sw"></span><span class="txt"><strong>Maroon</strong><span>Yours from day one — this is where you begin.</span></span></div>
+        <div class="tier" style="--c:var(--amber)"><span class="sw"></span><span class="txt"><strong>Amber</strong><span>15 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--aqua)"><span class="sw"></span><span class="txt"><strong>Aqua</strong><span>13 over par or better — and this one moves you to Stage 2.</span></span></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <h3>First 6 holes <small>Stage 2</small></h3>
+      <div class="tiers">
+        <div class="tier" style="--c:var(--navy)"><span class="sw"></span><span class="txt"><strong>Navy</strong><span>22 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--violet)"><span class="sw"></span><span class="txt"><strong>Violet</strong><span>20 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--scarlet)"><span class="sw"></span><span class="txt"><strong>Scarlet</strong><span>18 over par or better — moves you to Stage 3.</span></span></div>
+      </div>
+    </div>
+
+    <div class="stage">
+      <h3>First 9 holes <small>Stage 3</small></h3>
+      <div class="tiers">
+        <div class="tier" style="--c:var(--charcoal)"><span class="sw"></span><span class="txt"><strong>Charcoal</strong><span>24 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--emerald)"><span class="sw"></span><span class="txt"><strong>Emerald</strong><span>21 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--platinum)"><span class="sw"></span><span class="txt"><strong>Platinum</strong><span>18 over par or better — the last colour in Golf Gateway.</span></span></div>
+      </div>
+    </div>
+
+    <div class="grad-band">
+      <p><strong>Earning Platinum moves you into Golf Gateway Plus.</strong> It happens on its own — no waiting, no paperwork. Your next round starts the new scheme.</p>
+      <p>Everything you've already earned stays in your trophy cabinet. You keep all nine.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Golf Gateway Plus</h2>
+    <p class="lead">Nine holes off the red tees, and the same nine colours again — this time with a plus.</p>
+    <p>No stages here. It's one long stretch, and the targets tighten by two strokes each time: 30 over par for Maroon+, all the way down to 14 for Platinum+.</p>
+
+    <div class="stage">
+      <h3>9 holes, red tees <small>All nine colours</small></h3>
+      <div class="tiers">
+        <div class="tier" style="--c:var(--maroon)"><span class="sw"></span><span class="txt"><strong>Maroon+</strong><span>30 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--amber)"><span class="sw"></span><span class="txt"><strong>Amber+</strong><span>28 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--aqua)"><span class="sw"></span><span class="txt"><strong>Aqua+</strong><span>26 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--navy)"><span class="sw"></span><span class="txt"><strong>Navy+</strong><span>24 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--violet)"><span class="sw"></span><span class="txt"><strong>Violet+</strong><span>22 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--scarlet)"><span class="sw"></span><span class="txt"><strong>Scarlet+</strong><span>20 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--charcoal)"><span class="sw"></span><span class="txt"><strong>Charcoal+</strong><span>18 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--emerald)"><span class="sw"></span><span class="txt"><strong>Emerald+</strong><span>16 over par or better.</span></span></div>
+        <div class="tier" style="--c:var(--platinum)"><span class="sw"></span><span class="txt"><strong>Platinum+</strong><span>14 over par or better — the highest colour there is.</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions we get asked</h2>
+
+    <div class="stage">
+      <h3>What if I have a bad round?</h3>
+      <p style="margin:.6rem 0 0;color:var(--muted);font-size:.93rem">Nothing happens. You keep every colour you've earned. Play again whenever you like.</p>
+    </div>
+
+    <div class="stage">
+      <h3>Can I lose a colour?</h3>
+      <p style="margin:.6rem 0 0;color:var(--muted);font-size:.93rem">Only if a score was written down wrong and your coach corrects it. Otherwise a colour is yours for good.</p>
+    </div>
+
+    <div class="stage">
+      <h3>Why didn't I get two colours at once?</h3>
+      <p style="margin:.6rem 0 0;color:var(--muted);font-size:.93rem">Your club awards one colour per round — the next one waiting for you. Even a very low score earns just that one, so there's always something to aim at next time.</p>
+    </div>
+
+    <div class="stage">
+      <h3>Who can see my scores?</h3>
+      <p style="margin:.6rem 0 0;color:var(--muted);font-size:.93rem">You and your coach, always. Players in your group can see each other's rounds. <strong style="color:var(--ink)">If you're under 18 and a parent or carer has been linked to your account by the club, they can see your rounds and awards too</strong> — and they can log rounds for you.</p>
+    </div>
+  </section>
+
+  <details>
+    <summary>The exact numbers</summary>
+    <div class="tblwrap">
+      <table>
+        <caption>Golf Gateway</caption>
+        <thead><tr><th>Colour</th><th>Stage</th><th>Holes</th><th>Target</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip" style="--c:var(--maroon)"><i></i>Maroon</span></td><td>1</td><td class="num">3</td><td>Awarded on joining</td></tr>
+          <tr><td><span class="chip" style="--c:var(--amber)"><i></i>Amber</span></td><td>1</td><td class="num">3</td><td class="num">≤ 15 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--aqua)"><i></i>Aqua</span></td><td>1</td><td class="num">3</td><td class="num">≤ 13 over par ↑</td></tr>
+          <tr><td><span class="chip" style="--c:var(--navy)"><i></i>Navy</span></td><td>2</td><td class="num">6</td><td class="num">≤ 22 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--violet)"><i></i>Violet</span></td><td>2</td><td class="num">6</td><td class="num">≤ 20 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--scarlet)"><i></i>Scarlet</span></td><td>2</td><td class="num">6</td><td class="num">≤ 18 over par ↑</td></tr>
+          <tr><td><span class="chip" style="--c:var(--charcoal)"><i></i>Charcoal</span></td><td>3</td><td class="num">9</td><td class="num">≤ 24 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--emerald)"><i></i>Emerald</span></td><td>3</td><td class="num">9</td><td class="num">≤ 21 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--platinum)"><i></i>Platinum</span></td><td>3</td><td class="num">9</td><td class="num">≤ 18 over par ↑</td></tr>
+        </tbody>
+      </table>
+
+      <table>
+        <caption>Golf Gateway Plus — 9 holes, red tees</caption>
+        <thead><tr><th>Colour</th><th>Target</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip" style="--c:var(--maroon)"><i></i>Maroon+</span></td><td class="num">≤ 30 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--amber)"><i></i>Amber+</span></td><td class="num">≤ 28 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--aqua)"><i></i>Aqua+</span></td><td class="num">≤ 26 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--navy)"><i></i>Navy+</span></td><td class="num">≤ 24 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--violet)"><i></i>Violet+</span></td><td class="num">≤ 22 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--scarlet)"><i></i>Scarlet+</span></td><td class="num">≤ 20 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--charcoal)"><i></i>Charcoal+</span></td><td class="num">≤ 18 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--emerald)"><i></i>Emerald+</span></td><td class="num">≤ 16 over par</td></tr>
+          <tr><td><span class="chip" style="--c:var(--platinum)"><i></i>Platinum+</span></td><td class="num">≤ 14 over par</td></tr>
+        </tbody>
+      </table>
+      <p style="color:var(--muted);font-size:.8rem;margin:1rem 0 0">↑ marks a colour that moves you to the next stage or scheme. Targets are the most strokes over par you can take and still earn the colour.</p>
+    </div>
+  </details>
+
+  <footer>
+    <p>Ask your coach if anything here doesn't match what you're seeing in the app.</p>
+    <p>Academy Membership</p>
+  </footer>
+
+</div>
+</body>
+</html>
