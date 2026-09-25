@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Getting the Academy Membership app</title>
+<style>
+:root{--bg:#fbfaf7;--ink:#141b19;--muted:#646f6a;--green:#2b7857;--green-dark:#1f5a41;--soft:#dbf2e5;--sand:#e4d9b8;--sand-ink:#393221;--card:#fff;--border:#e1e0da;
+font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);line-height:1.45;-webkit-text-size-adjust:100%}
+b{font-weight:700}
+a{color:var(--green)}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
+header{background:var(--green);color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header .wrap{padding-top:28px;padding-bottom:30px;display:flex;align-items:center;gap:20px}
+.brand{font-size:15px;font-weight:600;color:var(--sand);margin:0 0 8px}
+h1{margin:0;font-size:clamp(30px,8vw,46px);line-height:1.05;font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+.lede{margin:10px 0 0;font-size:17px;color:#e8f3ec}
+.phone-art{flex-shrink:0;width:84px;height:auto}
+main .wrap{padding-top:20px;padding-bottom:40px;display:flex;flex-direction:column;gap:18px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px}
+h2{display:flex;align-items:center;gap:12px;margin:0 0 12px;font-size:22px;line-height:1.2;letter-spacing:-.02em}
+.num{flex-shrink:0;width:32px;height:32px;border-radius:16px;background:var(--sand);color:var(--sand-ink);font-size:17px;font-weight:800;display:inline-flex;align-items:center;justify-content:center}
+p{margin:0}
+.open{display:flex;gap:20px;align-items:center}
+.open-text{display:flex;flex-direction:column;gap:12px;min-width:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 20px;border-radius:14px;background:var(--green);color:#fff;font-size:18px;font-weight:700;text-decoration:none;align-self:flex-start;max-width:100%}
+.btn:hover{background:var(--green-dark)}
+.addr{font-size:15px;color:var(--muted)}
+.addr b{color:var(--ink)}
+.qr-box{display:none;flex-shrink:0;padding:6px;border:2px solid var(--green);border-radius:14px;background:#fff}
+.qr{display:block;width:128px;height:128px}
+.qr-note{display:none;font-size:15px;color:var(--muted)}
+.tabs{display:flex;gap:8px;margin:4px 0 14px;flex-wrap:wrap}
+.tab{appearance:none;font:inherit;font-size:16px;font-weight:700;min-height:44px;padding:8px 18px;border-radius:999px;border:2px solid var(--green);background:#fff;color:var(--green);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--green);color:#fff}
+.panel h3{margin:0 0 10px;font-size:18px;display:flex;align-items:center;gap:10px}
+.pill{font-size:13px;font-weight:600;background:var(--sand);color:var(--sand-ink);border-radius:999px;padding:3px 10px}
+ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+li{display:flex;align-items:center;gap:14px;counter-increment:s}
+.chip{position:relative;flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--soft);color:var(--green);display:inline-flex;align-items:center;justify-content:center}
+.chip::after{content:counter(s);position:absolute;top:-7px;left:-7px;width:22px;height:22px;border-radius:11px;background:var(--green);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.txt{font-size:17px}
+.done{display:flex;align-items:center;gap:10px;margin-top:16px;background:var(--soft);color:var(--green-dark);border-radius:14px;padding:12px 16px;font-weight:600}
+.pair{display:grid;grid-template-columns:1fr;gap:18px}
+.mini{display:flex;gap:14px;align-items:flex-start}
+.mini .chip::after{display:none}
+.mini h3{margin:0 0 4px;font-size:18px}
+.mini p{font-size:16px}
+footer{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;border-top:1px solid var(--border);padding-top:16px}
+@media (min-width:720px){
+ .qr-box{display:block} .qr-note{display:block}
+ .pair{grid-template-columns:1fr 1fr}
+ .phone-art{width:104px}
+}
+@media print{
+ :root{padding:0} header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .qr-box,.qr-note{display:block} .btn,.tabs{display:none} .panel[hidden]{display:block}
+ .card{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div style="flex-grow:1;min-width:0">
+<p class="brand">Academy Membership</p>
+<h1>Get the app on your phone</h1>
+<p class="lede">It runs in your web browser. There’s nothing to download from an app store.</p>
+</div>
+<svg class="phone-art" viewBox="0 0 128 196" aria-hidden="true"><rect x="2" y="2" width="124" height="192" rx="22" fill="#fff" stroke="#141b19" stroke-width="3"/><rect x="46" y="12" width="36" height="8" rx="4" fill="#141b19"/><rect x="14" y="38" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="40" y="38" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="66" y="38" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="92" y="38" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="14" y="66" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="40" y="66" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="66" y="66" width="18" height="18" rx="5" fill="#2b7857"/><path d="M73 80V70M73 70h6l-1.5 2.5 1.5 2.5h-6" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><rect x="92" y="66" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="14" y="94" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="40" y="94" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="66" y="94" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="92" y="94" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="14" y="122" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="40" y="122" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="66" y="122" width="18" height="18" rx="5" fill="#e1e0da"/><rect x="92" y="122" width="18" height="18" rx="5" fill="#e1e0da"/><circle cx="79" cy="75" r="17" fill="none" stroke="#e4d9b8" stroke-width="3"/><rect x="30" y="172" width="68" height="5" rx="2.5" fill="#141b19"/></svg>
+</div>
+</header>
+<main>
+<div class="wrap">
+
+<section class="card" aria-labelledby="s1">
+<h2 id="s1"><span class="num">1</span>Open the app</h2>
+<div class="open">
+<div class="qr-box"><svg class="qr" viewBox="-3 -3 35 35" shape-rendering="crispEdges" role="img" aria-label="QR code for ga.golfinstitute.uk"><rect x="-3" y="-3" width="35" height="35" fill="#fff"/><path d="M0 0h7v1h-7zM10 0h1v1h-1zM13 0h1v1h-1zM15 0h4v1h-4zM22 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h2v1h-2zM13 1h3v1h-3zM18 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM11 2h1v1h-1zM14 2h2v1h-2zM22 2h1v1h-1zM24 2h3v1h-3zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h1v1h-1zM13 3h1v1h-1zM15 3h3v1h-3zM19 3h1v1h-1zM22 3h1v1h-1zM24 3h3v1h-3zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM10 4h8v1h-8zM19 4h2v1h-2zM22 4h1v1h-1zM24 4h3v1h-3zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM10 5h1v1h-1zM13 5h3v1h-3zM19 5h2v1h-2zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h7v1h-7zM9 7h1v1h-1zM13 7h2v1h-2zM16 7h2v1h-2zM20 7h1v1h-1zM1 8h3v1h-3zM5 8h2v1h-2zM9 8h5v1h-5zM19 8h1v1h-1zM26 8h2v1h-2zM1 9h2v1h-2zM4 9h1v1h-1zM7 9h2v1h-2zM11 9h2v1h-2zM14 9h3v1h-3zM18 9h3v1h-3zM22 9h3v1h-3zM28 9h1v1h-1zM0 10h2v1h-2zM3 10h1v1h-1zM5 10h2v1h-2zM9 10h2v1h-2zM15 10h1v1h-1zM18 10h1v1h-1zM22 10h1v1h-1zM25 10h1v1h-1zM27 10h1v1h-1zM0 11h1v1h-1zM4 11h2v1h-2zM9 11h2v1h-2zM13 11h1v1h-1zM16 11h1v1h-1zM18 11h3v1h-3zM23 11h1v1h-1zM28 11h1v1h-1zM5 12h2v1h-2zM8 12h2v1h-2zM11 12h1v1h-1zM13 12h1v1h-1zM16 12h2v1h-2zM21 12h1v1h-1zM23 12h1v1h-1zM25 12h4v1h-4zM0 13h1v1h-1zM2 13h3v1h-3zM8 13h3v1h-3zM13 13h1v1h-1zM15 13h1v1h-1zM19 13h1v1h-1zM22 13h2v1h-2zM25 13h4v1h-4zM0 14h3v1h-3zM5 14h4v1h-4zM11 14h2v1h-2zM14 14h2v1h-2zM17 14h9v1h-9zM27 14h2v1h-2zM2 15h1v1h-1zM5 15h1v1h-1zM10 15h1v1h-1zM16 15h6v1h-6zM24 15h2v1h-2zM27 15h2v1h-2zM1 16h1v1h-1zM4 16h5v1h-5zM10 16h1v1h-1zM12 16h2v1h-2zM15 16h4v1h-4zM21 16h1v1h-1zM24 16h2v1h-2zM27 16h2v1h-2zM1 17h1v1h-1zM4 17h2v1h-2zM8 17h4v1h-4zM16 17h2v1h-2zM20 17h1v1h-1zM23 17h1v1h-1zM0 18h1v1h-1zM3 18h2v1h-2zM6 18h2v1h-2zM13 18h1v1h-1zM15 18h3v1h-3zM22 18h1v1h-1zM24 18h1v1h-1zM2 19h1v1h-1zM4 19h1v1h-1zM8 19h1v1h-1zM10 19h1v1h-1zM12 19h2v1h-2zM17 19h3v1h-3zM21 19h2v1h-2zM25 19h4v1h-4zM1 20h2v1h-2zM5 20h5v1h-5zM12 20h1v1h-1zM16 20h3v1h-3zM20 20h7v1h-7zM8 21h1v1h-1zM10 21h5v1h-5zM16 21h1v1h-1zM18 21h1v1h-1zM20 21h1v1h-1zM24 21h2v1h-2zM27 21h2v1h-2zM0 22h7v1h-7zM12 22h1v1h-1zM14 22h1v1h-1zM17 22h1v1h-1zM19 22h2v1h-2zM22 22h1v1h-1zM24 22h1v1h-1zM26 22h2v1h-2zM0 23h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM27 23h2v1h-2zM0 24h1v1h-1zM2 24h3v1h-3zM6 24h1v1h-1zM12 24h2v1h-2zM15 24h1v1h-1zM18 24h1v1h-1zM20 24h9v1h-9zM0 25h1v1h-1zM2 25h3v1h-3zM6 25h1v1h-1zM8 25h2v1h-2zM12 25h2v1h-2zM16 25h1v1h-1zM18 25h2v1h-2zM24 25h1v1h-1zM27 25h1v1h-1zM0 26h1v1h-1zM2 26h3v1h-3zM6 26h1v1h-1zM8 26h2v1h-2zM12 26h1v1h-1zM14 26h3v1h-3zM18 26h1v1h-1zM20 26h1v1h-1zM23 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM11 27h2v1h-2zM16 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM24 27h2v1h-2zM27 27h1v1h-1zM0 28h7v1h-7zM9 28h2v1h-2zM13 28h1v1h-1zM15 28h1v1h-1zM18 28h1v1h-1zM20 28h2v1h-2zM23 28h1v1h-1zM25 28h1v1h-1zM27 28h1v1h-1z" fill="#141b19"/></svg></div>
+<div class="open-text">
+<a class="btn" href="https://ga.golfinstitute.uk">Open ga.golfinstitute.uk <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+<p class="qr-note">Reading this on a computer? Scan the code with your phone’s camera instead.</p>
+<p class="addr">The address is always <b>ga.golfinstitute.uk</b></p>
+<p>Sign in with the email address your invitation was sent to, and your password.</p>
+</div>
+</div>
+</section>
+
+<section class="card" aria-labelledby="s2">
+<h2 id="s2"><span class="num">2</span>Put it on your home screen</h2>
+<p style="color:var(--muted);margin-bottom:6px">Do this once. Choose your phone:</p>
+<div class="tabs">
+<button type="button" class="tab" data-for="p-iphone" aria-pressed="true">iPhone</button>
+<button type="button" class="tab" data-for="p-android" aria-pressed="false">Android</button>
+</div>
+<div class="panel" id="p-iphone">
+<h3>iPhone <span class="pill">use Safari</span></h3>
+<ol>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span class="txt">Open <b>ga.golfinstitute.uk</b> in Safari.</span></li>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></span><span class="txt">Tap <b>Share</b>. Can’t see it? Tap <b>•••</b> first, then <b>Share</b>.</span></li>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span><span class="txt">Scroll down and tap <b>Add to Home Screen</b>.</span></li>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3"/></svg></span><span class="txt">Leave <b>Open as Web App</b> switched on, then tap <b>Add</b>.</span></li>
+</ol>
+</div>
+<div class="panel" id="p-android" hidden>
+<h3>Android <span class="pill">use Chrome</span></h3>
+<ol>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span class="txt">Open <b>ga.golfinstitute.uk</b> in Chrome.</span></li>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg></span><span class="txt">Tap <b>⋮</b> at the top right.</span></li>
+<li><span class="chip"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span><span class="txt">Tap <b>Add to home screen</b> or <b>Install app</b>, then confirm.</span></li>
+</ol>
+</div>
+<p class="done"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> From now on, open it from its icon, like any other app.</p>
+</section>
+
+<div class="pair">
+<section class="card mini" aria-labelledby="s3"><span class="chip"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg></span><div><h3 id="s3">Forgotten your password?</h3><p>On the sign-in page, tap <b>Forgot password</b>, enter your email address and follow the link we email you. Not arrived after a few minutes? Check your junk folder.</p></div></section>
+<section class="card mini" aria-labelledby="s4"><span class="chip"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span><div><h3 id="s4">Lost the web address?</h3><p>It’s always <b>ga.golfinstitute.uk</b>. Your Club Pro can send you this guide again.</p></div></section>
+</div>
+
+<footer><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Still stuck? Ask your Club Pro.</footer>
+</div>
+</main>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function show(id){
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-for')===id;
+      t.setAttribute('aria-pressed',on?'true':'false');
+      document.getElementById(t.getAttribute('data-for')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-for'));});});
+  if(/android/i.test(navigator.userAgent||'')) show('p-android');
+})();
+</script>
+</body>
+</html>
